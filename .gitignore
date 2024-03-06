@@ -42,4 +42,4 @@ build/
 /config/
 /external_static/
 /logs/
-dependency-reduced-pom
+dependency-reduced-pom.xml
