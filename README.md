@@ -1,4 +1,4 @@
-A lightweight, low-endurance storage lab server monitor. This toy was created to efficiently allocate GPU resources in our humble lab, making task deployment easier.
+A lightweight, low-persistence storage lab server monitor. This toy was created to efficiently allocate GPU resources in our humble lab, making task deployment easier.
 
 轻量化，弱持久存储的实验室服务器监控器。为了合理分配穷苦实验室的GPU资源，便于任务挂载，做了这个玩具。
 
