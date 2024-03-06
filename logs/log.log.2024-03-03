@@ -1,0 +1,393 @@
+2024-03-03 19:32:06  [ main:0 ] - [ INFO ]  Reflections took 66 ms to scan 1 urls, producing 2 keys and 2 values
+2024-03-03 19:32:06  [ main:28 ] - [ INFO ]  Component auth_database registered.
+2024-03-03 19:32:06  [ main:44 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 3 keys and 7 values
+2024-03-03 19:32:06  [ main:48 ] - [ INFO ]  Component cuda_executor registered.
+2024-03-03 19:32:06  [ main:49 ] - [ INFO ]  Component cuda_detail_executor registered.
+2024-03-03 19:32:06  [ main:49 ] - [ INFO ]  Component psaux_executor registered.
+2024-03-03 19:32:06  [ main:57 ] - [ INFO ]  Reflections took 7 ms to scan 1 urls, producing 2 keys and 3 values
+2024-03-03 19:32:06  [ main:58 ] - [ INFO ]  Component auth_service registered.
+2024-03-03 19:32:06  [ main:59 ] - [ INFO ]  Component heartbeat_service registered.
+2024-03-03 19:32:06  [ main:186 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 5 keys and 11 values
+2024-03-03 19:32:06  [ main:195 ] - [ INFO ]  Component LoginRouter registered.
+2024-03-03 19:32:06  [ main:196 ] - [ INFO ]  Component IpFilter registered.
+2024-03-03 19:32:06  [ main:197 ] - [ INFO ]  Component HeartbeatRouter registered.
+2024-03-03 19:32:06  [ main:198 ] - [ INFO ]  Component HeartbeatWsRouter registered.
+2024-03-03 19:32:06  [ main:198 ] - [ INFO ]  Component TestFrontApis registered.
+2024-03-03 19:32:06  [ main:199 ] - [ INFO ]  Component AuthenticationFilter registered.
+2024-03-03 19:32:06  [ main:244 ] - [ INFO ]  Mount Handler :  type :[filter]
+2024-03-03 19:32:06  [ main:253 ] - [ INFO ]  Mount Handler :  type :[wsFilter]
+2024-03-03 19:32:06  [ main:256 ] - [ INFO ]  Mount Handler : /privateWs/* type :[wsFilter]
+2024-03-03 19:32:06  [ main:257 ] - [ INFO ]  Mount Handler : /private/* type :[filter]
+2024-03-03 19:32:06  [ main:258 ] - [ INFO ]  Mount Handler : /private/auth type :[post]
+2024-03-03 19:32:06  [ main:258 ] - [ INFO ]  Mount Handler : /private/logout type :[post]
+2024-03-03 19:32:06  [ main:259 ] - [ INFO ]  Mount Handler : /public/loginByPwd type :[post]
+2024-03-03 19:32:06  [ main:259 ] - [ INFO ]  Mount Handler : /info.html type :[before]
+2024-03-03 19:32:06  [ main:260 ] - [ INFO ]  Mount Handler : / type :[get]
+2024-03-03 19:32:06  [ main:260 ] - [ INFO ]  Mount Handler : /loginByPwd type :[post]
+2024-03-03 19:32:06  [ main:261 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 19:32:06  [ main:261 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 19:32:06  [ main:262 ] - [ INFO ]  Mount Handler : /s type :[get]
+2024-03-03 19:32:06  [ main:262 ] - [ INFO ]  Mount Handler : /private/heartbeat type :[get]
+2024-03-03 19:32:06  [ main:263 ] - [ INFO ]  Mount Handler : /private/cudaDetail type :[get]
+2024-03-03 19:32:06  [ main:264 ] - [ INFO ]  Mount Handler : /privateWs/heartbeat type :[ws]
+2024-03-03 19:32:07  [ main:387 ] - [ INFO ]  Starting Javalin ...
+2024-03-03 19:32:07  [ main:390 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-03-03 19:32:07  [ main:469 ] - [ INFO ]  Session workerName=node0
+2024-03-03 19:32:07  [ main:480 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@616ac46a{/,null,AVAILABLE}
+2024-03-03 19:32:07  [ main:493 ] - [ INFO ]  Started ServerConnector@4c60d6e9{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-03-03 19:32:07  [ main:502 ] - [ INFO ]  Started Server@359df09a{STARTING}[11.0.19,sto=0] @993ms
+2024-03-03 19:32:07  [ main:502 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-03-03 19:32:07  [ main:504 ] - [ INFO ]  Javalin started in 235ms \o/
+2024-03-03 19:32:07  [ main:526 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/, directory=/static, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: 'file:///home/user/mmh/apj/dxttf/target/classes/static/'
+2024-03-03 19:32:07  [ main:527 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/external_static, directory=./external_static, location=EXTERNAL, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: './external_static'
+2024-03-03 19:32:07  [ main:532 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-03-03 19:32:07  [ main:549 ] - [ INFO ]  You are running Javalin 6.1.2 (released February 25, 2024).
+2024-03-03 19:56:40  [ JettyServerThreadPool-54:1473555 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:56:41  [ JettyServerThreadPool-40:1474744 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:57:19  [ JettyServerThreadPool-40:1512681 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:58:26  [ JettyServerThreadPool-48:1580032 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:58:31  [ JettyServerThreadPool-48:1584669 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:59:12  [ JettyServerThreadPool-50:1625903 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:59:15  [ JettyServerThreadPool-48:1629270 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:59:23  [ JettyServerThreadPool-47:1636438 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:59:25  [ JettyServerThreadPool-48:1638912 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:59:55  [ JettyServerThreadPool-35:1668768 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 19:59:57  [ JettyServerThreadPool-35:1670503 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:00:28  [ JettyServerThreadPool-54:1701905 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:00:31  [ JettyServerThreadPool-54:1704574 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:12:44  [ main:0 ] - [ INFO ]  Reflections took 66 ms to scan 1 urls, producing 2 keys and 2 values
+2024-03-03 20:12:44  [ main:27 ] - [ INFO ]  Component auth_database registered.
+2024-03-03 20:12:44  [ main:39 ] - [ INFO ]  Reflections took 11 ms to scan 1 urls, producing 3 keys and 9 values
+2024-03-03 20:12:44  [ main:43 ] - [ INFO ]  Component cuda_executor registered.
+2024-03-03 20:12:44  [ main:44 ] - [ INFO ]  Component cuda_detail_executor registered.
+2024-03-03 20:12:44  [ main:44 ] - [ INFO ]  Component psaux_executor registered.
+2024-03-03 20:12:44  [ main:45 ] - [ INFO ]  Component free_executor registered.
+2024-03-03 20:12:44  [ main:52 ] - [ INFO ]  Reflections took 6 ms to scan 1 urls, producing 2 keys and 3 values
+2024-03-03 20:12:44  [ main:54 ] - [ INFO ]  Component auth_service registered.
+2024-03-03 20:12:44  [ main:54 ] - [ INFO ]  Component heartbeat_service registered.
+2024-03-03 20:12:44  [ main:175 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 5 keys and 11 values
+2024-03-03 20:12:44  [ main:184 ] - [ INFO ]  Component LoginRouter registered.
+2024-03-03 20:12:44  [ main:185 ] - [ INFO ]  Component IpFilter registered.
+2024-03-03 20:12:44  [ main:186 ] - [ INFO ]  Component HeartbeatRouter registered.
+2024-03-03 20:12:44  [ main:187 ] - [ INFO ]  Component HeartbeatWsRouter registered.
+2024-03-03 20:12:44  [ main:187 ] - [ INFO ]  Component TestFrontApis registered.
+2024-03-03 20:12:44  [ main:190 ] - [ INFO ]  Component AuthenticationFilter registered.
+2024-03-03 20:12:44  [ main:233 ] - [ INFO ]  Mount Handler :  type :[filter]
+2024-03-03 20:12:44  [ main:236 ] - [ INFO ]  Mount Handler :  type :[wsFilter]
+2024-03-03 20:12:44  [ main:238 ] - [ INFO ]  Mount Handler : /private/* type :[filter]
+2024-03-03 20:12:44  [ main:240 ] - [ INFO ]  Mount Handler : /privateWs/* type :[wsFilter]
+2024-03-03 20:12:44  [ main:241 ] - [ INFO ]  Mount Handler : /private/auth type :[post]
+2024-03-03 20:12:44  [ main:241 ] - [ INFO ]  Mount Handler : /private/logout type :[post]
+2024-03-03 20:12:44  [ main:242 ] - [ INFO ]  Mount Handler : /public/loginByPwd type :[post]
+2024-03-03 20:12:44  [ main:242 ] - [ INFO ]  Mount Handler : /info.html type :[before]
+2024-03-03 20:12:44  [ main:243 ] - [ INFO ]  Mount Handler : / type :[get]
+2024-03-03 20:12:44  [ main:243 ] - [ INFO ]  Mount Handler : /loginByPwd type :[post]
+2024-03-03 20:12:44  [ main:244 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 20:12:44  [ main:244 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 20:12:44  [ main:245 ] - [ INFO ]  Mount Handler : /s type :[get]
+2024-03-03 20:12:44  [ main:245 ] - [ INFO ]  Mount Handler : /private/heartbeat type :[get]
+2024-03-03 20:12:44  [ main:246 ] - [ INFO ]  Mount Handler : /private/cudaDetail type :[get]
+2024-03-03 20:12:44  [ main:248 ] - [ INFO ]  Mount Handler : /privateWs/heartbeat type :[ws]
+2024-03-03 20:12:45  [ main:364 ] - [ INFO ]  Starting Javalin ...
+2024-03-03 20:12:45  [ main:367 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-03-03 20:12:45  [ main:444 ] - [ INFO ]  Session workerName=node0
+2024-03-03 20:12:45  [ main:454 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@28d18df5{/,null,AVAILABLE}
+2024-03-03 20:12:45  [ main:466 ] - [ INFO ]  Started ServerConnector@2d901eb0{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-03-03 20:12:45  [ main:477 ] - [ INFO ]  Started Server@1972e513{STARTING}[11.0.19,sto=0] @970ms
+2024-03-03 20:12:45  [ main:477 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-03-03 20:12:45  [ main:480 ] - [ INFO ]  Javalin started in 228ms \o/
+2024-03-03 20:12:45  [ main:503 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/, directory=/static, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: 'file:///home/user/mmh/apj/dxttf/target/classes/static/'
+2024-03-03 20:12:45  [ main:505 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/external_static, directory=./external_static, location=EXTERNAL, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: './external_static'
+2024-03-03 20:12:45  [ main:510 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-03-03 20:12:45  [ main:528 ] - [ INFO ]  You are running Javalin 6.1.2 (released February 25, 2024).
+2024-03-03 20:12:59  [ JettyServerThreadPool-30:15026 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:13:56  [ main:0 ] - [ INFO ]  Reflections took 64 ms to scan 1 urls, producing 2 keys and 2 values
+2024-03-03 20:13:56  [ main:32 ] - [ INFO ]  Component auth_database registered.
+2024-03-03 20:13:56  [ main:44 ] - [ INFO ]  Reflections took 11 ms to scan 1 urls, producing 3 keys and 9 values
+2024-03-03 20:13:56  [ main:48 ] - [ INFO ]  Component cuda_executor registered.
+2024-03-03 20:13:56  [ main:49 ] - [ INFO ]  Component cuda_detail_executor registered.
+2024-03-03 20:13:56  [ main:49 ] - [ INFO ]  Component psaux_executor registered.
+2024-03-03 20:13:56  [ main:50 ] - [ INFO ]  Component free_executor registered.
+2024-03-03 20:13:56  [ main:57 ] - [ INFO ]  Reflections took 6 ms to scan 1 urls, producing 2 keys and 3 values
+2024-03-03 20:13:56  [ main:59 ] - [ INFO ]  Component auth_service registered.
+2024-03-03 20:13:56  [ main:59 ] - [ INFO ]  Component heartbeat_service registered.
+2024-03-03 20:13:56  [ main:193 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 5 keys and 11 values
+2024-03-03 20:13:56  [ main:203 ] - [ INFO ]  Component LoginRouter registered.
+2024-03-03 20:13:56  [ main:203 ] - [ INFO ]  Component IpFilter registered.
+2024-03-03 20:13:56  [ main:204 ] - [ INFO ]  Component HeartbeatRouter registered.
+2024-03-03 20:13:56  [ main:205 ] - [ INFO ]  Component HeartbeatWsRouter registered.
+2024-03-03 20:13:56  [ main:206 ] - [ INFO ]  Component TestFrontApis registered.
+2024-03-03 20:13:56  [ main:208 ] - [ INFO ]  Component AuthenticationFilter registered.
+2024-03-03 20:13:56  [ main:252 ] - [ INFO ]  Mount Handler :  type :[filter]
+2024-03-03 20:13:56  [ main:256 ] - [ INFO ]  Mount Handler :  type :[wsFilter]
+2024-03-03 20:13:56  [ main:257 ] - [ INFO ]  Mount Handler : /private/* type :[filter]
+2024-03-03 20:13:56  [ main:259 ] - [ INFO ]  Mount Handler : /privateWs/* type :[wsFilter]
+2024-03-03 20:13:56  [ main:260 ] - [ INFO ]  Mount Handler : /private/auth type :[post]
+2024-03-03 20:13:56  [ main:261 ] - [ INFO ]  Mount Handler : /private/logout type :[post]
+2024-03-03 20:13:56  [ main:261 ] - [ INFO ]  Mount Handler : /public/loginByPwd type :[post]
+2024-03-03 20:13:56  [ main:262 ] - [ INFO ]  Mount Handler : /info.html type :[before]
+2024-03-03 20:13:56  [ main:262 ] - [ INFO ]  Mount Handler : / type :[get]
+2024-03-03 20:13:56  [ main:263 ] - [ INFO ]  Mount Handler : /loginByPwd type :[post]
+2024-03-03 20:13:56  [ main:263 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 20:13:56  [ main:264 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 20:13:56  [ main:264 ] - [ INFO ]  Mount Handler : /s type :[get]
+2024-03-03 20:13:56  [ main:265 ] - [ INFO ]  Mount Handler : /private/heartbeat type :[get]
+2024-03-03 20:13:56  [ main:265 ] - [ INFO ]  Mount Handler : /private/cudaDetail type :[get]
+2024-03-03 20:13:56  [ main:267 ] - [ INFO ]  Mount Handler : /privateWs/heartbeat type :[ws]
+2024-03-03 20:13:56  [ main:391 ] - [ INFO ]  Starting Javalin ...
+2024-03-03 20:13:56  [ main:395 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-03-03 20:13:57  [ main:484 ] - [ INFO ]  Session workerName=node0
+2024-03-03 20:13:57  [ main:496 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@31920ade{/,null,AVAILABLE}
+2024-03-03 20:13:57  [ main:509 ] - [ INFO ]  Started ServerConnector@d737b89{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-03-03 20:13:57  [ main:522 ] - [ INFO ]  Started Server@514646ef{STARTING}[11.0.19,sto=0] @1006ms
+2024-03-03 20:13:57  [ main:523 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-03-03 20:13:57  [ main:524 ] - [ INFO ]  Javalin started in 254ms \o/
+2024-03-03 20:13:57  [ main:548 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/, directory=/static, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: 'file:///home/user/mmh/apj/dxttf/target/classes/static/'
+2024-03-03 20:13:57  [ main:551 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/external_static, directory=./external_static, location=EXTERNAL, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: './external_static'
+2024-03-03 20:13:57  [ main:556 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-03-03 20:13:57  [ main:576 ] - [ INFO ]  You are running Javalin 6.1.2 (released February 25, 2024).
+2024-03-03 20:14:00  [ JettyServerThreadPool-30:4334 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:20:14  [ JettyServerThreadPool-211:377971 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:24:07  [ JettyServerThreadPool-212:610539 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:33:15  [ JettyServerThreadPool-35:1158871 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:33:15  [ JettyServerThreadPool-36:1159461 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:33:24  [ JettyServerThreadPool-35:1168308 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:38:20  [ JettyServerThreadPool-29:1463935 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:38:21  [ JettyServerThreadPool-47:1465098 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:38:26  [ JettyServerThreadPool-47:1469502 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:40:17  [ JettyServerThreadPool-35:1580674 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:40:17  [ JettyServerThreadPool-212:1581449 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 2.
+2024-03-03 20:42:32  [ JettyServerThreadPool-34:1716280 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:42:33  [ JettyServerThreadPool-212:1716636 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 2.
+2024-03-03 20:45:27  [ JettyServerThreadPool-34:1891177 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 20:45:28  [ JettyServerThreadPool-893:1891495 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 2.
+2024-03-03 21:02:11  [ JettyServerThreadPool-1342:2895234 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:03:55  [ JettyServerThreadPool-1343:2998618 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:06:02  [ JettyServerThreadPool-1344:3125615 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:06:39  [ JettyServerThreadPool-1344:3162884 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:08:35  [ JettyServerThreadPool-671:3279429 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:11:08  [ JettyServerThreadPool-47:3432186 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:12:08  [ JettyServerThreadPool-47:3492411 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:27:04  [ JettyServerThreadPool-2023:4387532 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:32:23  [ JettyServerThreadPool-893:4706838 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 2.
+2024-03-03 21:35:22  [ main:0 ] - [ INFO ]  Reflections took 65 ms to scan 1 urls, producing 2 keys and 2 values
+2024-03-03 21:35:22  [ main:26 ] - [ INFO ]  Component auth_database registered.
+2024-03-03 21:35:22  [ main:38 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 3 keys and 9 values
+2024-03-03 21:35:22  [ main:43 ] - [ INFO ]  Component cuda_executor registered.
+2024-03-03 21:35:22  [ main:43 ] - [ INFO ]  Component cuda_detail_executor registered.
+2024-03-03 21:35:22  [ main:44 ] - [ INFO ]  Component psaux_executor registered.
+2024-03-03 21:35:22  [ main:44 ] - [ INFO ]  Component free_executor registered.
+2024-03-03 21:35:22  [ main:52 ] - [ INFO ]  Reflections took 6 ms to scan 1 urls, producing 2 keys and 3 values
+2024-03-03 21:35:22  [ main:53 ] - [ INFO ]  Component auth_service registered.
+2024-03-03 21:35:22  [ main:54 ] - [ INFO ]  Component heartbeat_service registered.
+2024-03-03 21:35:22  [ main:177 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 5 keys and 11 values
+2024-03-03 21:35:22  [ main:186 ] - [ INFO ]  Component LoginRouter registered.
+2024-03-03 21:35:22  [ main:187 ] - [ INFO ]  Component IpFilter registered.
+2024-03-03 21:35:22  [ main:188 ] - [ INFO ]  Component HeartbeatRouter registered.
+2024-03-03 21:35:22  [ main:189 ] - [ INFO ]  Component HeartbeatWsRouter registered.
+2024-03-03 21:35:22  [ main:189 ] - [ INFO ]  Component TestFrontApis registered.
+2024-03-03 21:35:22  [ main:193 ] - [ INFO ]  Component AuthenticationFilter registered.
+2024-03-03 21:35:22  [ main:237 ] - [ INFO ]  Mount Handler :  type :[filter]
+2024-03-03 21:35:22  [ main:241 ] - [ INFO ]  Mount Handler :  type :[wsFilter]
+2024-03-03 21:35:22  [ main:243 ] - [ INFO ]  Mount Handler : /private/* type :[filter]
+2024-03-03 21:35:22  [ main:245 ] - [ INFO ]  Mount Handler : /privateWs/* type :[wsFilter]
+2024-03-03 21:35:22  [ main:245 ] - [ INFO ]  Mount Handler : /private/auth type :[post]
+2024-03-03 21:35:22  [ main:246 ] - [ INFO ]  Mount Handler : /private/logout type :[post]
+2024-03-03 21:35:22  [ main:246 ] - [ INFO ]  Mount Handler : /public/loginByPwd type :[post]
+2024-03-03 21:35:22  [ main:247 ] - [ INFO ]  Mount Handler : /info.html type :[before]
+2024-03-03 21:35:22  [ main:247 ] - [ INFO ]  Mount Handler : / type :[get]
+2024-03-03 21:35:22  [ main:248 ] - [ INFO ]  Mount Handler : /loginByPwd type :[post]
+2024-03-03 21:35:22  [ main:248 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 21:35:22  [ main:249 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 21:35:22  [ main:249 ] - [ INFO ]  Mount Handler : /s type :[get]
+2024-03-03 21:35:22  [ main:250 ] - [ INFO ]  Mount Handler : /private/heartbeat type :[get]
+2024-03-03 21:35:22  [ main:250 ] - [ INFO ]  Mount Handler : /private/cudaDetail type :[get]
+2024-03-03 21:35:22  [ main:252 ] - [ INFO ]  Mount Handler : /privateWs/heartbeat type :[ws]
+2024-03-03 21:35:22  [ main:377 ] - [ INFO ]  Starting Javalin ...
+2024-03-03 21:35:22  [ main:381 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-03-03 21:35:22  [ main:472 ] - [ INFO ]  Session workerName=node0
+2024-03-03 21:35:22  [ main:483 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@28d18df5{/,null,AVAILABLE}
+2024-03-03 21:35:22  [ main:497 ] - [ INFO ]  Started ServerConnector@2d901eb0{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-03-03 21:35:22  [ main:506 ] - [ INFO ]  Started Server@1972e513{STARTING}[11.0.19,sto=0] @979ms
+2024-03-03 21:35:22  [ main:507 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-03-03 21:35:22  [ main:509 ] - [ INFO ]  Javalin started in 253ms \o/
+2024-03-03 21:35:22  [ main:533 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/, directory=/static, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: 'file:///home/user/mmh/apj/dxttf/target/classes/static/'
+2024-03-03 21:35:22  [ main:535 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/external_static, directory=./external_static, location=EXTERNAL, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: './external_static'
+2024-03-03 21:35:23  [ main:541 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-03-03 21:35:23  [ main:563 ] - [ INFO ]  You are running Javalin 6.1.2 (released February 25, 2024).
+2024-03-03 21:35:28  [ JettyServerThreadPool-30:5792 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:46:04  [ main:0 ] - [ INFO ]  Reflections took 63 ms to scan 1 urls, producing 2 keys and 2 values
+2024-03-03 21:46:04  [ main:26 ] - [ INFO ]  Component auth_database registered.
+2024-03-03 21:46:04  [ main:37 ] - [ INFO ]  Reflections took 9 ms to scan 1 urls, producing 3 keys and 9 values
+2024-03-03 21:46:04  [ main:42 ] - [ INFO ]  Component cuda_executor registered.
+2024-03-03 21:46:04  [ main:42 ] - [ INFO ]  Component cuda_detail_executor registered.
+2024-03-03 21:46:04  [ main:43 ] - [ INFO ]  Component psaux_executor registered.
+2024-03-03 21:46:04  [ main:43 ] - [ INFO ]  Component free_executor registered.
+2024-03-03 21:46:04  [ main:50 ] - [ INFO ]  Reflections took 6 ms to scan 1 urls, producing 2 keys and 3 values
+2024-03-03 21:46:04  [ main:51 ] - [ INFO ]  Component auth_service registered.
+2024-03-03 21:46:04  [ main:56 ] - [ INFO ]  Component heartbeat_service registered.
+2024-03-03 21:46:05  [ main:178 ] - [ INFO ]  Reflections took 10 ms to scan 1 urls, producing 5 keys and 11 values
+2024-03-03 21:46:05  [ main:187 ] - [ INFO ]  Component LoginRouter registered.
+2024-03-03 21:46:05  [ main:188 ] - [ INFO ]  Component IpFilter registered.
+2024-03-03 21:46:05  [ main:189 ] - [ INFO ]  Component HeartbeatRouter registered.
+2024-03-03 21:46:05  [ main:190 ] - [ INFO ]  Component HeartbeatWsRouter registered.
+2024-03-03 21:46:05  [ main:190 ] - [ INFO ]  Component TestFrontApis registered.
+2024-03-03 21:46:05  [ main:193 ] - [ INFO ]  Component AuthenticationFilter registered.
+2024-03-03 21:46:05  [ main:235 ] - [ INFO ]  Mount Handler :  type :[filter]
+2024-03-03 21:46:05  [ main:239 ] - [ INFO ]  Mount Handler :  type :[wsFilter]
+2024-03-03 21:46:05  [ main:241 ] - [ INFO ]  Mount Handler : /private/* type :[filter]
+2024-03-03 21:46:05  [ main:243 ] - [ INFO ]  Mount Handler : /privateWs/* type :[wsFilter]
+2024-03-03 21:46:05  [ main:243 ] - [ INFO ]  Mount Handler : /private/auth type :[post]
+2024-03-03 21:46:05  [ main:244 ] - [ INFO ]  Mount Handler : /private/logout type :[post]
+2024-03-03 21:46:05  [ main:245 ] - [ INFO ]  Mount Handler : /public/loginByPwd type :[post]
+2024-03-03 21:46:05  [ main:245 ] - [ INFO ]  Mount Handler : /info.html type :[before]
+2024-03-03 21:46:05  [ main:245 ] - [ INFO ]  Mount Handler : / type :[get]
+2024-03-03 21:46:05  [ main:246 ] - [ INFO ]  Mount Handler : /loginByPwd type :[post]
+2024-03-03 21:46:05  [ main:246 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 21:46:05  [ main:247 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 21:46:05  [ main:247 ] - [ INFO ]  Mount Handler : /s type :[get]
+2024-03-03 21:46:05  [ main:248 ] - [ INFO ]  Mount Handler : /private/heartbeat type :[get]
+2024-03-03 21:46:05  [ main:248 ] - [ INFO ]  Mount Handler : /private/cudaDetail type :[get]
+2024-03-03 21:46:05  [ main:250 ] - [ INFO ]  Mount Handler : /privateWs/heartbeat type :[ws]
+2024-03-03 21:46:05  [ main:371 ] - [ INFO ]  Starting Javalin ...
+2024-03-03 21:46:05  [ main:374 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-03-03 21:46:05  [ main:457 ] - [ INFO ]  Session workerName=node0
+2024-03-03 21:46:05  [ main:467 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@28d18df5{/,null,AVAILABLE}
+2024-03-03 21:46:05  [ main:479 ] - [ INFO ]  Started ServerConnector@2d901eb0{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-03-03 21:46:05  [ main:488 ] - [ INFO ]  Started Server@1972e513{STARTING}[11.0.19,sto=0] @967ms
+2024-03-03 21:46:05  [ main:488 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-03-03 21:46:05  [ main:490 ] - [ INFO ]  Javalin started in 237ms \o/
+2024-03-03 21:46:05  [ main:512 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/, directory=/static, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: 'file:///home/user/mmh/apj/dxttf/target/classes/static/'
+2024-03-03 21:46:05  [ main:514 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/external_static, directory=./external_static, location=EXTERNAL, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: './external_static'
+2024-03-03 21:46:05  [ main:519 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-03-03 21:46:05  [ main:535 ] - [ INFO ]  You are running Javalin 6.1.2 (released February 25, 2024).
+2024-03-03 21:46:14  [ JettyServerThreadPool-30:9985 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 2.
+2024-03-03 21:46:22  [ JettyServerThreadPool-44:17641 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 2.
+2024-03-03 21:46:42  [ JettyServerThreadPool-44:37496 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:54:53  [ JettyServerThreadPool-1601:528965 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:55:05  [ JettyServerThreadPool-1601:540788 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 21:57:58  [ JettyServerThreadPool-34:713794 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:00:05  [ JettyServerThreadPool-36:840909 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:00:12  [ JettyServerThreadPool-35:847178 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:05:39  [ JettyServerThreadPool-3511:1174541 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:05:55  [ JettyServerThreadPool-29:1190581 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:05:56  [ JettyServerThreadPool-40:1191155 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:12:00  [ JettyServerThreadPool-3621:1555805 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:12:01  [ JettyServerThreadPool-3620:1556698 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:20:39  [ JettyServerThreadPool-1602:2074535 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:30:11  [ JettyServerThreadPool-6379:2647078 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:31:34  [ JettyServerThreadPool-34:2729686 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:32:13  [ JettyServerThreadPool-34:2768879 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:35:19  [ JettyServerThreadPool-35:2954166 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:35:52  [ JettyServerThreadPool-34:2988049 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:37:11  [ JettyServerThreadPool-35:3067019 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:37:30  [ JettyServerThreadPool-47:3085219 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:37:48  [ JettyServerThreadPool-3511:3103270 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:38:02  [ JettyServerThreadPool-46:3117871 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:38:42  [ JettyServerThreadPool-46:3157193 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:39:11  [ JettyServerThreadPool-46:3186660 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:39:45  [ JettyServerThreadPool-46:3220101 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:40:55  [ JettyServerThreadPool-2195:3290353 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:41:17  [ JettyServerThreadPool-6585:3312533 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:42:52  [ JettyServerThreadPool-3512:3407640 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:46:16  [ main:0 ] - [ INFO ]  Reflections took 66 ms to scan 1 urls, producing 2 keys and 2 values
+2024-03-03 22:46:16  [ main:26 ] - [ INFO ]  Component auth_database registered.
+2024-03-03 22:46:16  [ main:44 ] - [ INFO ]  Reflections took 15 ms to scan 1 urls, producing 3 keys and 9 values
+2024-03-03 22:46:16  [ main:49 ] - [ INFO ]  Component cuda_executor registered.
+2024-03-03 22:46:16  [ main:49 ] - [ INFO ]  Component cuda_detail_executor registered.
+2024-03-03 22:46:16  [ main:50 ] - [ INFO ]  Component psaux_executor registered.
+2024-03-03 22:46:16  [ main:50 ] - [ INFO ]  Component free_executor registered.
+2024-03-03 22:46:16  [ main:58 ] - [ INFO ]  Reflections took 7 ms to scan 1 urls, producing 2 keys and 3 values
+2024-03-03 22:46:16  [ main:60 ] - [ INFO ]  Component auth_service registered.
+2024-03-03 22:46:16  [ main:60 ] - [ INFO ]  Component heartbeat_service registered.
+2024-03-03 22:46:16  [ main:181 ] - [ INFO ]  Reflections took 9 ms to scan 1 urls, producing 5 keys and 11 values
+2024-03-03 22:46:16  [ main:190 ] - [ INFO ]  Component LoginRouter registered.
+2024-03-03 22:46:16  [ main:191 ] - [ INFO ]  Component IpFilter registered.
+2024-03-03 22:46:16  [ main:192 ] - [ INFO ]  Component HeartbeatRouter registered.
+2024-03-03 22:46:16  [ main:193 ] - [ INFO ]  Component HeartbeatWsRouter registered.
+2024-03-03 22:46:16  [ main:193 ] - [ INFO ]  Component TestFrontApis registered.
+2024-03-03 22:46:16  [ main:196 ] - [ INFO ]  Component AuthenticationFilter registered.
+2024-03-03 22:46:16  [ main:238 ] - [ INFO ]  Mount Handler :  type :[filter]
+2024-03-03 22:46:16  [ main:241 ] - [ INFO ]  Mount Handler :  type :[wsFilter]
+2024-03-03 22:46:16  [ main:243 ] - [ INFO ]  Mount Handler : /private/* type :[filter]
+2024-03-03 22:46:16  [ main:245 ] - [ INFO ]  Mount Handler : /privateWs/* type :[wsFilter]
+2024-03-03 22:46:16  [ main:246 ] - [ INFO ]  Mount Handler : /private/auth type :[post]
+2024-03-03 22:46:16  [ main:246 ] - [ INFO ]  Mount Handler : /private/logout type :[post]
+2024-03-03 22:46:16  [ main:247 ] - [ INFO ]  Mount Handler : /public/loginByPwd type :[post]
+2024-03-03 22:46:16  [ main:247 ] - [ INFO ]  Mount Handler : /info.html type :[before]
+2024-03-03 22:46:16  [ main:247 ] - [ INFO ]  Mount Handler : / type :[get]
+2024-03-03 22:46:16  [ main:248 ] - [ INFO ]  Mount Handler : /loginByPwd type :[post]
+2024-03-03 22:46:16  [ main:248 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 22:46:16  [ main:249 ] - [ INFO ]  Mount Handler : /s type :[before]
+2024-03-03 22:46:16  [ main:249 ] - [ INFO ]  Mount Handler : /s type :[get]
+2024-03-03 22:46:16  [ main:250 ] - [ INFO ]  Mount Handler : /private/cudaDetail type :[get]
+2024-03-03 22:46:16  [ main:250 ] - [ INFO ]  Mount Handler : /private/heartbeat type :[get]
+2024-03-03 22:46:16  [ main:252 ] - [ INFO ]  Mount Handler : /privateWs/heartbeat type :[ws]
+2024-03-03 22:46:16  [ main:374 ] - [ INFO ]  Starting Javalin ...
+2024-03-03 22:46:16  [ main:378 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-03-03 22:46:16  [ main:460 ] - [ INFO ]  Session workerName=node0
+2024-03-03 22:46:16  [ main:472 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@28d18df5{/,null,AVAILABLE}
+2024-03-03 22:46:16  [ main:484 ] - [ INFO ]  Started ServerConnector@2d901eb0{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-03-03 22:46:16  [ main:498 ] - [ INFO ]  Started Server@1972e513{STARTING}[11.0.19,sto=0] @975ms
+2024-03-03 22:46:16  [ main:499 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-03-03 22:46:16  [ main:501 ] - [ INFO ]  Javalin started in 245ms \o/
+2024-03-03 22:46:16  [ main:524 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/, directory=/static, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: 'file:///home/user/mmh/apj/dxttf/target/classes/static/'
+2024-03-03 22:46:16  [ main:526 ] - [ INFO ]  Static file handler added: StaticFileConfig(hostedPath=/external_static, directory=./external_static, location=EXTERNAL, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=0}, skipFileFunction=Function1<jakarta.servlet.http.HttpServletRequest, java.lang.Boolean>, mimeTypes={}). File system location: './external_static'
+2024-03-03 22:46:16  [ main:531 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-03-03 22:46:16  [ main:549 ] - [ INFO ]  You are running Javalin 6.1.2 (released February 25, 2024).
+2024-03-03 22:46:37  [ JettyServerThreadPool-30:21519 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:50:37  [ JettyServerThreadPool-31:260772 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:50:38  [ JettyServerThreadPool-115:261684 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:52:48  [ JettyServerThreadPool-33:392400 ] - [ INFO ]  Login try username: admin, auth type: 0, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:52:49  [ JettyServerThreadPool-31:393064 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:55:05  [ JettyServerThreadPool-35:529231 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 22:59:17  [ JettyServerThreadPool-36:781174 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.
+2024-03-03 23:05:37  [ JettyServerThreadPool-319:1161401 ] - [ INFO ]  Login try username: admin, auth type: 1, from ip: 127.0.0.1, result: 0.

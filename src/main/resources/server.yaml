@@ -1,0 +1,82 @@
+server:
+  randomSeed: -1
+  port: 8080
+  whiteIps:
+    - 127.0.0.1
+    - localhost
+    - 0:0:0:0:0:0:0:1
+    - 192.168.139.0/24
+
+  staticPath: /static
+  staticMap: /
+  externalStaticPath: ./external_static
+  externalStaticMap: /external_static
+  heartbeatInterval: 3000
+  allowMethods:
+    - get
+    - post
+    - ws
+  ws:
+    maxKeepActive: 100
+
+
+front:
+  loginLocation: /login
+  registerLocation: /register
+
+
+auth:
+
+  namePatten: "[a-zA-Z0-9]{2,16}"
+  passwdPatten: "[a-zA-Z0-9.()!@#$%^&*,.<>/?;:=_+]{1,18}"
+
+  maxNameLength: 32
+  register: true
+  authFile: ./auth
+
+
+  pauseFailCount: 10
+  pauseInterval: 600000
+  blockFailCount: 10000
+
+
+  tryInterval: 1000
+  tokenActive: 864000000
+  strictIp: false
+
+  tokenKey: auth_token
+  nameKey: user
+  tokenLength: 64
+
+  cookieAuth: false
+
+
+
+
+script:
+  scriptPath: ./script/linux
+  python: python
+  bash: /bin/bash
+  bat: ''
+  superUserEnable: false
+  executorUser: kalzn
+  register:
+    - executor: "psaux_executor"
+      target: "ps.sh"
+      type: "bash"
+      superUser: false
+
+    - executor: "cuda_executor"
+      target: "cuda.sh"
+      type: "bash"
+      superUser: false
+
+    - executor: "cuda_detail_executor"
+      target: "cuda_detail.sh"
+      type: "bash"
+      superUser: false
+
+    - executor: "free_executor"
+      target: "free.sh"
+      type: "bash"
+      superUser: false

@@ -1,0 +1,4 @@
+2024-02-29 10:17:28  [ main:457 ] - [ ERROR ]  Fail to mount router : Javalin no such method, mapping : [/private/*]in Router java.lang.Object.privateAuthFilter
+2024-02-29 10:18:58  [ main:42626 ] - [ ERROR ]  Fail to mount router : Javalin no such method, mapping : [/private/*]in Router java.lang.Object.privateAuthFilter
+2024-02-29 10:19:48  [ main:4331 ] - [ ERROR ]  Fail to mount router : Javalin no such method, mapping : [/private/*]in Router kalzn.router.common.AuthenticationFilter.privateAuthFilter
+2024-02-29 10:22:28  [ main:124891 ] - [ ERROR ]  Fail to mount router : Javalin no such method, mapping : [/private/*]in Router kalzn.router.common.AuthenticationFilter.privateAuthFilter

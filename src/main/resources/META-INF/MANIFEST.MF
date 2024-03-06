@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Main-Class: kalzn.dxttf.Main
+Class-Path: websocket-jetty-api-11.0.19.jar jetty-security-11.0.19.jar s
+ lf4j-log4j12-1.7.25.jar jetty-webapp-11.0.19.jar kotlin-stdlib-1.9.22.j
+ ar kotlin-stdlib-jdk8-1.9.22.jar jetty-util-11.0.19.jar websocket-servl
+ et-11.0.19.jar websocket-jetty-common-11.0.19.jar websocket-core-server
+ -11.0.19.jar snakeyaml-2.2.jar kotlin-stdlib-jdk7-1.9.22.jar gson-2.10.
+ 1.jar websocket-jetty-server-11.0.19.jar javalin-6.1.2.jar jetty-http-1
+ 1.0.19.jar websocket-core-common-11.0.19.jar log4j-1.2.17.jar jetty-io-
+ 11.0.19.jar jetty-xml-11.0.19.jar jetty-server-11.0.19.jar jetty-servle
+ t-11.0.19.jar annotations-13.0.jar commons-net-3.10.0.jar javassist-3.2
+ 8.0-GA.jar jsr305-3.0.2.jar reflections-0.10.2.jar slf4j-api-1.7.25.jar
+  jetty-jakarta-servlet-api-5.0.2.jar
+

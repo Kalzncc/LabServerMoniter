@@ -1,0 +1,15 @@
+2024-02-25 13:58:01  [ main:0 ] - [ INFO ]  Load External Configuration File from 
+2024-02-25 13:58:01  [ main:205 ] - [ ERROR ]  External Configuration File Not Found : 
+2024-02-25 13:59:06  [ main:0 ] - [ INFO ]  Load External Configuration File from 
+2024-02-25 13:59:40  [ main:0 ] - [ ERROR ]  External Configuration File Not Found : 
+2024-02-25 14:03:03  [ main:0 ] - [ INFO ]  Reflections took 204 ms to scan 1 urls, producing 1 keys and 2 values
+2024-02-25 14:03:18  [ main:15500 ] - [ INFO ]  Service AuthenticationService registered.
+2024-02-25 14:03:18  [ main:15503 ] - [ INFO ]  Service heartbeat registered.
+2024-02-25 14:04:24  [ main:0 ] - [ INFO ]  Reflections took 244 ms to scan 1 urls, producing 1 keys and 2 values
+2024-02-25 14:04:24  [ main:58 ] - [ INFO ]  Service heartbeat registered.
+2024-02-25 14:04:48  [ main:0 ] - [ INFO ]  Reflections took 282 ms to scan 1 urls, producing 1 keys and 2 values
+2024-02-25 14:04:48  [ main:57 ] - [ INFO ]  Service AuthenticationService registered.
+2024-02-25 14:04:48  [ main:60 ] - [ INFO ]  Service heartbeat registered.
+2024-02-25 14:06:16  [ main:1 ] - [ INFO ]  Reflections took 108 ms to scan 1 urls, producing 1 keys and 2 values
+2024-02-25 14:06:16  [ main:24 ] - [ INFO ]  Service AuthenticationService registered.
+2024-02-25 14:06:17  [ main:27 ] - [ INFO ]  Service heartbeat registered.

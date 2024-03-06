@@ -1,0 +1,112 @@
+2024-02-24 20:58:36  [ main:0 ] - [ INFO ]  Logger Test - Log info produced by slf4j.
+2024-02-24 20:59:35  [ main:0 ] - [ INFO ]  Logger Test - Log info produced by slf4j.
+2024-02-24 21:05:45  [ main:0 ] - [ INFO ]  Starting Javalin ...
+2024-02-24 21:05:45  [ main:16 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-02-24 21:05:45  [ main:148 ] - [ INFO ]  Session workerName=node0
+2024-02-24 21:05:45  [ main:171 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@7922d892{/,null,AVAILABLE}
+2024-02-24 21:05:45  [ main:343 ] - [ INFO ]  Started ServerConnector@6f15d60e{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-02-24 21:05:45  [ main:359 ] - [ INFO ]  Started Server@7098b907{STARTING}[11.0.19,sto=0] @1977ms
+2024-02-24 21:05:45  [ main:360 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-02-24 21:05:45  [ main:362 ] - [ INFO ]  Javalin started in 584ms \o/
+2024-02-24 21:05:45  [ main:374 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-02-24 21:05:45  [ main:405 ] - [ INFO ]  You are running Javalin 6.1.0 (released February 17, 2024).
+2024-02-24 21:07:08  [ main:0 ] - [ INFO ]  Starting Javalin ...
+2024-02-24 21:07:08  [ main:13 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-02-24 21:07:08  [ main:139 ] - [ INFO ]  Session workerName=node0
+2024-02-24 21:07:08  [ main:160 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@36a5cabc{/,null,AVAILABLE}
+2024-02-24 21:07:08  [ main:347 ] - [ INFO ]  Started ServerConnector@7139992f{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-02-24 21:07:08  [ main:366 ] - [ INFO ]  Started Server@730d2164{STARTING}[11.0.19,sto=0] @2079ms
+2024-02-24 21:07:08  [ main:367 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-02-24 21:07:08  [ main:370 ] - [ INFO ]  Javalin started in 580ms \o/
+2024-02-24 21:07:08  [ main:384 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-02-24 21:07:08  [ main:417 ] - [ INFO ]  You are running Javalin 6.1.0 (released February 17, 2024).
+2024-02-24 21:08:29  [ main:0 ] - [ INFO ]  Starting Javalin ...
+2024-02-24 21:08:29  [ main:25 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-02-24 21:08:29  [ main:135 ] - [ INFO ]  Session workerName=node0
+2024-02-24 21:08:29  [ main:156 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@69f1a286{/,null,AVAILABLE}
+2024-02-24 21:08:29  [ main:320 ] - [ INFO ]  Started ServerConnector@7857fe2{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-02-24 21:08:29  [ main:335 ] - [ INFO ]  Started Server@15d49048{STARTING}[11.0.19,sto=0] @1886ms
+2024-02-24 21:08:29  [ main:336 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-02-24 21:08:29  [ main:338 ] - [ INFO ]  Javalin started in 503ms \o/
+2024-02-24 21:08:29  [ main:349 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-02-24 21:08:29  [ main:371 ] - [ INFO ]  You are running Javalin 6.1.0 (released February 17, 2024).
+2024-02-24 21:09:12  [ main:0 ] - [ INFO ]  Starting Javalin ...
+2024-02-24 21:09:12  [ main:12 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-02-24 21:09:12  [ main:142 ] - [ INFO ]  Session workerName=node0
+2024-02-24 21:09:12  [ main:166 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@7922d892{/,null,AVAILABLE}
+2024-02-24 21:09:12  [ main:347 ] - [ INFO ]  Started ServerConnector@6f15d60e{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-02-24 21:09:12  [ main:364 ] - [ INFO ]  Started Server@7098b907{STARTING}[11.0.19,sto=0] @2111ms
+2024-02-24 21:09:12  [ main:365 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-02-24 21:09:12  [ main:369 ] - [ INFO ]  Javalin started in 577ms \o/
+2024-02-24 21:09:12  [ main:380 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-02-24 21:09:12  [ main:407 ] - [ INFO ]  You are running Javalin 6.1.0 (released February 17, 2024).
+2024-02-24 21:10:04  [ main:0 ] - [ INFO ]  Starting Javalin ...
+2024-02-24 21:10:04  [ main:12 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-02-24 21:10:04  [ main:155 ] - [ INFO ]  Session workerName=node0
+2024-02-24 21:10:04  [ main:187 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@5939a379{/,null,AVAILABLE}
+2024-02-24 21:10:04  [ main:370 ] - [ INFO ]  Started ServerConnector@ef9296d{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-02-24 21:10:04  [ main:388 ] - [ INFO ]  Started Server@27ce24aa{STARTING}[11.0.19,sto=0] @1577ms
+2024-02-24 21:10:04  [ main:388 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-02-24 21:10:04  [ main:392 ] - [ INFO ]  Javalin started in 637ms \o/
+2024-02-24 21:10:04  [ main:404 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-02-24 21:10:04  [ main:431 ] - [ INFO ]  You are running Javalin 6.1.0 (released February 17, 2024).
+2024-02-24 21:10:35  [ main:0 ] - [ INFO ]  Starting Javalin ...
+2024-02-24 21:10:35  [ main:8 ] - [ INFO ]  jetty-11.0.19; built: 2023-12-15T20:54:39.802Z; git: f781e475c8fa9e9c8ce18b1eaa03110d510f905f; jvm 17.0.10+11-LTS-240
+2024-02-24 21:10:35  [ main:141 ] - [ INFO ]  Session workerName=node0
+2024-02-24 21:10:35  [ main:167 ] - [ INFO ]  Started o.e.j.s.ServletContextHandler@5939a379{/,null,AVAILABLE}
+2024-02-24 21:10:36  [ main:340 ] - [ INFO ]  Started ServerConnector@ef9296d{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2024-02-24 21:10:36  [ main:356 ] - [ INFO ]  Started Server@27ce24aa{STARTING}[11.0.19,sto=0] @1230ms
+2024-02-24 21:10:36  [ main:356 ] - [ INFO ]  
+       __                  ___           _____
+      / /___ __   ______ _/ (_)___      / ___/
+ __  / / __ `/ | / / __ `/ / / __ \    / __ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /   / /_/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/    \____/
+
+       https://javalin.io/documentation
+
+2024-02-24 21:10:36  [ main:358 ] - [ INFO ]  Javalin started in 549ms \o/
+2024-02-24 21:10:36  [ main:370 ] - [ INFO ]  Listening on http://localhost:8080/
+2024-02-24 21:10:36  [ main:395 ] - [ INFO ]  You are running Javalin 6.1.0 (released February 17, 2024).
+2024-02-24 22:49:36  [ main:0 ] - [ ERROR ]  Cannot invoke "java.util.Map.containsKey(Object)" because "configMap" is null
+2024-02-24 22:53:16  [ main:0 ] - [ ERROR ]  Cannot invoke "java.util.Map.containsKey(Object)" because "configMap" is null

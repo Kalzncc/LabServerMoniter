@@ -1,0 +1,17 @@
+2024-02-27 10:59:39  [ main:0 ] - [ ERROR ]  External configuration file load error (Can not set static [Ljava.lang.String; field kalzn.config.GlobalConfig$server.allowMethods to java.util.ArrayList).
+2024-02-27 12:28:36  [ main:169 ] - [ ERROR ]  Fail to mount router : Cannot invoke "Object.getClass()" because "obj" is null
+2024-02-27 14:54:51  [ main:192 ] - [ ERROR ]  Fail to mount router : Cannot invoke "java.util.List.contains(Object)" because "kalzn.config.GlobalConfig$server.allowMethods" is null
+2024-02-27 14:55:52  [ main:163 ] - [ ERROR ]  Fail to mount router : Cannot invoke "java.util.List.contains(Object)" because "kalzn.config.GlobalConfig$server.allowMethods" is null
+2024-02-27 15:17:01  [ main:270 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 15:22:45  [ main:284 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 15:23:51  [ main:258 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 15:24:29  [ main:256 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:12:55  [ main:480 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:15:16  [ main:263 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:19:04  [ main:256 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:20:06  [ main:237 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:20:57  [ main:247 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:21:23  [ main:248 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:21:39  [ main:263 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:22:05  [ main:258 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
+2024-02-27 16:23:00  [ main:252 ] - [ ERROR ]  Fail to mount router : Can't mount route : [/]in Router java.lang.Object.redirectLogin
