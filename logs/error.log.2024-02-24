@@ -1,2 +1,0 @@
-2024-02-24 22:49:36  [ main:0 ] - [ ERROR ]  Cannot invoke "java.util.Map.containsKey(Object)" because "configMap" is null
-2024-02-24 22:53:16  [ main:0 ] - [ ERROR ]  Cannot invoke "java.util.Map.containsKey(Object)" because "configMap" is null

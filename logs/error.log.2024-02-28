@@ -1,3 +1,0 @@
-2024-02-28 14:28:35  [ main:391 ] - [ ERROR ]  Fail to mount router : Javalin no such method, mapping : [/private/*]in Router java.lang.Object.info
-2024-02-28 14:29:12  [ main:414 ] - [ ERROR ]  Fail to mount router : Javalin no such method, mapping : [/private/*]in Router java.lang.Object.info
-2024-02-28 15:09:41  [ main:0 ] - [ ERROR ]  External configuration file load error (Can not set static [Ljava.lang.String; field kalzn.config.GlobalConfig$server$customMethod.methods to java.util.ArrayList).
