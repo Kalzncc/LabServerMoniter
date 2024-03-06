@@ -38,7 +38,7 @@ build/
 .DS_Store
 
 ### Other ###
-./auth/
-./config/
-./external_static/
-./logs/
+/auth/
+/config/
+/external_static/
+/logs/
