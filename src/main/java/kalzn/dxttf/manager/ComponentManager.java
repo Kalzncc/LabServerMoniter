@@ -15,13 +15,13 @@ public abstract class ComponentManager {
 
 
 
-    protected static void registerComponents(Map<String, Object> components, Package manager) {
+    protected static void registerComponents(Map<String, Object> components, Package manager, int componentType) {
         String componentPackageName = manager.getName();
         Reflections reflector = new Reflections(componentPackageName);
         Set<Class<?>> componentClasses = reflector.getTypesAnnotatedWith(Component.class);
         componentClasses.forEach(componentClass -> {
             Component annotation = componentClass.getAnnotation(Component.class);
-            if (annotation == null || annotation.disable())
+            if (annotation == null || annotation.disable() || annotation.type() != componentType)
                 return;
             String[] names = annotation.name().length == 0?new String[]{componentClass.getSimpleName()}:annotation.name();
             for (var name : names) {

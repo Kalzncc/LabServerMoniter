@@ -10,6 +10,7 @@ public class CudaDetailExecutor extends Executor{
     }
 
     @Override
+    // Ignore enter before cuda detail info.
     public String postProcess() {
         return super.postProcess().substring(1);
     }

@@ -60,6 +60,8 @@ public class LoginRouter {
             ctx.cookie(GlobalConfig.auth.tokenKey, res.getToken());
         }
         ctx.result(new Gson().toJson(ResponseFactory.create(res)));
-
     }
+
+
+
 }

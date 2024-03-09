@@ -21,7 +21,7 @@ public class HeartbeatRouter {
         heartbeatService = ServiceManager.getService("heartbeat_service", HeartbeatService.class);
     }
 
-    @Api(types = "get", mapping = "/private/heartbeat", priority = 1)
+    @Api(types = "get", mapping = "/private/heartbeat")
     public void heartbeat(Context ctx) {
         try {
             HeartbeatInfo info = heartbeatService.getHeartbeatInfo();
@@ -31,7 +31,7 @@ public class HeartbeatRouter {
         }
     }
 
-    @Api (types = "get", mapping = "/private/cudaDetail", priority = 1)
+    @Api (types = "get", mapping = "/private/cudaDetail")
     public void cudaDetail(Context ctx) {
         try {
             String cudaIdStr = ctx.queryParam("cudaId");
@@ -50,7 +50,7 @@ public class HeartbeatRouter {
         }
     }
 
-    @Api (types = "get", mapping = "/private/systemInfo", priority = 1)
+    @Api (types = "get", mapping = "/private/systemInfo")
     public void systemInfo(Context ctx) {
         try {
             String info = heartbeatService.getSystemInfo();

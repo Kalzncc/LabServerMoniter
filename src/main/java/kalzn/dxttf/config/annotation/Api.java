@@ -11,5 +11,5 @@ public @interface Api {
     String[] types() default {"get"};
     String mapping () default "";
 
-    int priority() default 1;
+    int priority() default 0;
 }

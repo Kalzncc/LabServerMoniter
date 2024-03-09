@@ -5,6 +5,7 @@ import io.javalin.http.Handler;
 import io.javalin.http.staticfiles.Location;
 import kalzn.dxttf.config.GlobalConfig;
 import kalzn.dxttf.config.annotation.Api;
+import kalzn.dxttf.config.annotation.Component;
 import kalzn.dxttf.manager.ComponentManager;
 import lombok.Getter;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class RouterLoader {
         @Getter
         private static final Map<String, Object> components = new HashMap<>();
         public static void loadRouters () {
-            registerComponents(components, RouterLoader.class.getPackage());
+            registerComponents(components, RouterLoader.class.getPackage(), Component.ROUTER);
         }
 
     }

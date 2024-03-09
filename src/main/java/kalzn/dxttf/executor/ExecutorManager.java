@@ -3,6 +3,7 @@ package kalzn.dxttf.executor;
 
 import kalzn.dxttf.config.GlobalConfig;
 import kalzn.dxttf.config.ScriptRegisterConfig;
+import kalzn.dxttf.config.annotation.Component;
 import kalzn.dxttf.manager.ComponentManager;
 import lombok.Getter;
 
@@ -28,7 +29,7 @@ public class ExecutorManager extends ComponentManager {
     }
 
     public static void registerExecutors() {
-        ComponentManager.registerComponents(components, ExecutorManager.class.getPackage());
+        ComponentManager.registerComponents(components, ExecutorManager.class.getPackage(), Component.EXECUTOR);
 
         // Executor component need bind external script.
         List<ScriptRegisterConfig> registers = GlobalConfig.script.register;

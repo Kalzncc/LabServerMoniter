@@ -1,5 +1,6 @@
 package kalzn.dxttf.service;
 
+import kalzn.dxttf.config.annotation.Component;
 import kalzn.dxttf.manager.ComponentManager;
 import lombok.Getter;
 
@@ -10,7 +11,7 @@ public class ServiceManager extends ComponentManager {
     @Getter
     private static final Map<String, Object> components = new HashMap<>();
     public static void registerServices() {
-        ComponentManager.registerComponents(components, ServiceManager.class.getPackage());
+        ComponentManager.registerComponents(components, ServiceManager.class.getPackage(), Component.SERVICE);
     }
     public static <T> T getService(String name, Class<T> serviceClass, boolean prototype) {
         return ComponentManager.getComponent(components, name, serviceClass, prototype);
