@@ -1,11 +1,13 @@
 server:
+
   randomSeed: -1
-  port: 8080
+  port: 8081
   whiteIps:
     - 127.0.0.1
     - localhost
     - 0:0:0:0:0:0:0:1
     - 192.168.139.0/24
+    - 10.26.52.13
 
   staticPath: /static
   staticMap: /
@@ -26,7 +28,7 @@ front:
 
 
 auth:
-
+  openAuth: true
   namePatten: "[a-zA-Z0-9]{2,16}"
   passwdPatten: "[a-zA-Z0-9.()!@#$%^&*,.<>/?;:=_+]{1,18}"
 
@@ -78,5 +80,10 @@ script:
 
     - executor: "free_executor"
       target: "free.sh"
+      type: "bash"
+      superUser: false
+
+    - executor: "systeminfo_executor"
+      target: "systeminfo.sh"
       type: "bash"
       superUser: false

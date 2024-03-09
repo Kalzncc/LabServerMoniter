@@ -103,11 +103,13 @@ public abstract class Executor {
         StringBuilder stderrStringBuilder = new StringBuilder();
         String bufferLine = "";
         try {
-            while ((bufferLine = stderrReader.readLine()) != null) {
-                stderrStringBuilder.append(bufferLine).append('\n');
-            }
-            if (!stderrStringBuilder.toString().isEmpty()) {
-                throw new RuntimeException("Script execute fail : " + stderrStringBuilder);
+            if (stderrReader.ready()) {
+                while ((bufferLine = stderrReader.readLine()) != null) {
+                    stderrStringBuilder.append(bufferLine).append('\n');
+                }
+                if (!stderrStringBuilder.toString().isEmpty()) {
+                    throw new RuntimeException("Script execute fail : " + stderrStringBuilder);
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException("Script executor can't read stderr.");

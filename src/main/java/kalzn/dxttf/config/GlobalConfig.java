@@ -24,6 +24,7 @@ public class GlobalConfig {
     }
 
     public static class auth {
+        public static boolean openAuth;
         public static boolean register;
         public static String authFile;
 

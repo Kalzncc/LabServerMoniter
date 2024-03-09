@@ -8,4 +8,9 @@ public class CudaDetailExecutor extends Executor{
     public CudaDetailExecutor(String scriptPath, Integer scriptType, Boolean withSuperUser) {
         super(scriptPath, scriptType, withSuperUser);
     }
+
+    @Override
+    public String postProcess() {
+        return super.postProcess().substring(1);
+    }
 }

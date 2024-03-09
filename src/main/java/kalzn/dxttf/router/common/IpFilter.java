@@ -13,7 +13,7 @@ import kalzn.dxttf.util.IpAddress;
 public class IpFilter {
 
 
-    private void checkIp(String host) {
+    private boolean checkIp(String host) {
         String ipStr = host;
         if (host.charAt(0) == '[' && host.charAt(host.length() - 1) == ']')
             ipStr = host.substring(1, host.length() - 1);
@@ -23,41 +23,51 @@ public class IpFilter {
         IpAddress ip = IpAddress.createIpFromString(ipStr);
 
         if (ip == null) {
-            if (GlobalConfig.server.whiteIps.contains(ipStr)) {
-                return;
-            }
-            FilterChain.reject(403, "Forbidden");
+            return GlobalConfig.server.whiteIps.contains(ipStr);
+
         }
         try {
             for (var whiteIpString : GlobalConfig.server.whiteIps) {
                 if (IpAddress.isIp(whiteIpString) && whiteIpString.equals(ipStr)) {
-                    return;
+                    return true;
                 } else if (IpAddress.isIpAndMask(whiteIpString) ) {
                     var whiteNetSegment = IpAddress.createIpAndMaskFromString(whiteIpString);
 
                     assert whiteNetSegment != null;
                     if (ip.inSuchNetSegment(whiteNetSegment)) {
-                        return;
+                        return true;
                     }
                 }
             }
         } catch (Exception e) {
-            throw new InternalServerErrorResponse();
+            return false;
         }
-        FilterChain.reject(403, "Forbidden");
+        return false;
     }
 
 
     @Api(types = {"filter"}, priority = -10)
     public void whiteIpFilter(Context ctx) {
-        checkIp(ctx.ip());
+        try {
+            if (!checkIp(ctx.ip())) {
+                FilterChain.reject(403, "Forbidden");
+            }
+        } catch (Exception e) {
+            FilterChain.reject(403, "Forbidden");
+        }
     }
 
 
     @Api(types = {"wsFilter"}, priority = -10)
     public void whiteIpWsFilter(WsConfig wsConfig) {
         wsConfig.onConnect(ws -> {
-            checkIp(ws.host());
+            try {
+                if (!checkIp(ws.host())) {
+                    FilterChain.wsReject(403, "Forbidden", true);
+                }
+            } catch (Exception e) {
+                FilterChain.wsReject(403, "Forbidden", true);
+            }
         });
     }
 }

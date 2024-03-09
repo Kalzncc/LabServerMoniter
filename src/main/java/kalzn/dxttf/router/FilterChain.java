@@ -3,7 +3,7 @@ package kalzn.dxttf.router;
 import com.google.gson.Gson;
 import io.javalin.Javalin;
 import io.javalin.http.HttpResponseException;
-import kalzn.dxttf.router.ws.support.WebsocketSessionStorage;
+import kalzn.dxttf.router.support.WebsocketSessionStorage;
 import kalzn.dxttf.util.factory.ResponseFactory;
 import lombok.Getter;
 

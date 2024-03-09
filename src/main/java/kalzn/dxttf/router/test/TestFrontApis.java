@@ -19,7 +19,7 @@ import java.util.Map;
  * Front server api.
  * Only used in test.
  */
-@Component(disable = false, type = Component.ROUTER)
+@Component(disable = true, type = Component.ROUTER)
 public class TestFrontApis {
 
     private final AuthenticationService authenticationService = ServiceManager.getService("auth_service", AuthenticationService.class);

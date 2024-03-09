@@ -1,5 +1,6 @@
 package kalzn;
 
+import io.javalin.Javalin;
 import kalzn.dxttf.config.GlobalConfigLoader;
 import kalzn.dxttf.data.DataManager;
 import kalzn.dxttf.executor.CudaDetailExecutor;
@@ -75,4 +76,14 @@ public class TestJavaLin {
 
         var cudaInfo = cudaDetailExecutor.postProcess();
     }
+
+    @Test
+    void testProcessScript() throws Exception {
+        var psAux = ExecutorManager.getExecutor("psaux_executor", PsAuxExecutor.class, true);
+
+        psAux.execute(true);
+
+        psAux.getProcessList();
+    }
+
 }

@@ -27,7 +27,9 @@ public class LoginRouter {
 
     @Api(types = "post", mapping = "/private/auth")
     public void defaultAuth(Context ctx) {
-        ctx.result(new Gson().toJson(ResponseFactory.create()));
+        AuthenticationResult result = new AuthenticationResult();
+        result.setResult(AuthenticationResult.SUCCESS);
+        ctx.result(new Gson().toJson(ResponseFactory.create(result)));
     }
     @Api (types = "post", mapping = "/private/logout")
     public void logout(Context ctx) {
@@ -39,6 +41,13 @@ public class LoginRouter {
     }
     @Api(types = "post", mapping = "/public/loginByPwd")
     public void loginByPwd(Context ctx) {
+        if (GlobalConfig.auth.openAuth) {
+            AuthenticationResult result = new AuthenticationResult();
+            result.setResult(AuthenticationResult.SUCCESS);
+            ctx.result(new Gson().toJson(ResponseFactory.create(result)));
+            return;
+        }
+
         Map<String, Object> req = GsonUtil.toStringKeyMap(ctx.body());
         if (req == null || !RequestChecker.checkLoginByPwdReq(req)) {
             throw new BadRequestResponse();

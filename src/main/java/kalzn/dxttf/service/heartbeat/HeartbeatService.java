@@ -79,4 +79,17 @@ public class HeartbeatService {
         return cudaDetailExecutor.postProcess();
 
     }
+
+    public String getSystemInfo() {
+        var systemInfoExecutor =
+                ExecutorManager.getExecutor("systeminfo_executor", SystemInfoExecutor.class, true);
+        try {
+            assert systemInfoExecutor != null;
+            systemInfoExecutor.execute(true);
+        } catch (Exception e) {
+            logger.warn(String.format(LogRecord.WARN_SCRIPT_EXECUTE_FAIL, systemInfoExecutor.getCmd()));
+            return null;
+        }
+        return systemInfoExecutor.postProcess();
+    }
 }

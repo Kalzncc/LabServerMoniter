@@ -1,5 +1,6 @@
 package kalzn;
 
+import io.javalin.Javalin;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,5 +33,27 @@ public class LogTest {
         long freeMemory = Runtime.getRuntime().freeMemory();
         double memoryUsage = ((double)(totalMemory - freeMemory) / totalMemory) * 100;
         System.out.println("内存占用率: " + memoryUsage + "%");
+    }
+
+    @Test
+    void testMulBefore() throws Exception {
+        Javalin app = Javalin.create();
+        app.before(ctx -> {});
+        app.before(ctx -> {});
+
+        app.before("/g", ctx -> {});
+        app.before("/g", ctx -> {});
+
+
+
+
+
+        app.wsBefore("/privateWs/*", ws -> {
+
+        });
+
+        app.wsBefore(ws -> {
+
+        });
     }
 }

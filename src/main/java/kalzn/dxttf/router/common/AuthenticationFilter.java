@@ -8,7 +8,7 @@ import kalzn.dxttf.config.annotation.Component;
 import kalzn.dxttf.pojo.outer.AuthenticationResult;
 import kalzn.dxttf.pojo.outer.PrivateReq;
 import kalzn.dxttf.router.FilterChain;
-import kalzn.dxttf.router.ws.support.WebsocketSessionStorage;
+import kalzn.dxttf.router.support.WebsocketSessionStorage;
 import kalzn.dxttf.service.ServiceManager;
 import kalzn.dxttf.service.auth.AuthenticationService;
 import kalzn.dxttf.util.checker.PrivateReqChecker;
@@ -28,6 +28,11 @@ public class AuthenticationFilter {
 
     @Api(types = {"filter"}, mapping = "/private/*", priority = -5)
     public void privateAuthFilter(Context ctx) {
+
+        if (GlobalConfig.auth.openAuth) {
+            return;
+        }
+
         PrivateReq req = null;
         try {
             req = new Gson().fromJson(ctx.body(), PrivateReq.class);
@@ -62,9 +67,15 @@ public class AuthenticationFilter {
     @Api(types = {"wsFilter"}, mapping = "/privateWs/*", priority = -5)
     public void privateWsAuthFilter(WsConfig wsConfig) {
         wsConfig.onConnect(ws -> {
-            WebsocketSessionStorage.add(ws.sessionId(), "status", WS_AUTHENTICATING);
-            ws.send(new Gson().toJson(ResponseFactory.create(210, "Ready to authenticate.")));
-            FilterChain.wsReject(false, false);
+            if (!GlobalConfig.auth.openAuth) {
+                WebsocketSessionStorage.add(ws.sessionId(), "status", WS_AUTHENTICATING);
+                ws.send(new Gson().toJson(ResponseFactory.create(210, "Ready to authenticate.")));
+                FilterChain.wsReject(false, false);
+            } else {
+                WebsocketSessionStorage.add(ws.sessionId(), "status", WS_AUTHENTICATED);
+                ws.send(new Gson().toJson(ResponseFactory.create(211, "Authentication success.")));
+                FilterChain.wsReject(false, false);
+            }
         });
         wsConfig.onMessage(ws -> {
             if (WS_AUTHENTICATED.equals(WebsocketSessionStorage.get(ws.sessionId(), "status"))) {

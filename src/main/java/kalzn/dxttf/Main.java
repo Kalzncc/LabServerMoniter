@@ -33,8 +33,8 @@ public class Main {
             Class.forName("kalzn.dxttf.config.GlobalSystemStatus");
             // Static acquisition of the current state of the system.
 
-            Class.forName("kalzn.dxttf.router.ws.support.WebsocketSessionStorage");
-            // Load websocket session status storage proxy.
+//            Class.forName("kalzn.dxttf.router.support.WebsocketSessionStorage");
+//            // Load websocket session status storage proxy.
 
         } catch (ClassNotFoundException e) {
             logger.error(String.format(LogRecord.ERROR_CANT_LOAD_SYSTEM_STATUS));

@@ -48,7 +48,18 @@ public class HeartbeatRouter {
         } catch (Exception e) {
             ctx.result(new Gson().toJson(ResponseFactory.create(500, e.getMessage())));
         }
-
     }
 
+    @Api (types = "get", mapping = "/private/systemInfo", priority = 1)
+    public void systemInfo(Context ctx) {
+        try {
+            String info = heartbeatService.getSystemInfo();
+            Map<String, String> data = new HashMap<>();
+            data.put("info", info);
+            ctx.result(new Gson().toJson(ResponseFactory.create(data)));
+
+        } catch (Exception e) {
+            ctx.result(new Gson().toJson(ResponseFactory.create(500, e.getMessage())));
+        }
+    }
 }
