@@ -6,7 +6,9 @@ free
 printf "\n\n"
 printf "===CPU===\n"
 lscpu
-
+printf "\n\n"
+printf "===DISK===\n"
+df -h
 
 
 

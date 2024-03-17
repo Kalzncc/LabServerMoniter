@@ -9,7 +9,7 @@ import kalzn.dxttf.pojo.inner.AuthenticationTask;
 import kalzn.dxttf.pojo.outer.AuthenticationResult;
 import kalzn.dxttf.service.ServiceManager;
 import kalzn.dxttf.service.auth.AuthenticationService;
-import kalzn.dxttf.util.HashUtil;
+import kalzn.dxttf.util.TokenUtil;
 import kalzn.dxttf.util.factory.ResponseFactory;
 
 
@@ -79,7 +79,7 @@ public class TestFrontApis {
             String ipstr = ctx.ip().substring(1, ctx.ip().length()-1);
             authReq.setIp(ipstr);
             authReq.setName((String) loginReq.get("name"));
-            authReq.setPassword(HashUtil.getMD5((String) loginReq.get("password")));
+            authReq.setPassword(TokenUtil.getMD5((String) loginReq.get("password")));
             authReq.setAuthenticationType(AuthenticationTask.AUTHENTICATE_BY_PWD);
 
             var res = authenticationService.authenticate(authReq);

@@ -7,7 +7,10 @@ import kalzn.dxttf.config.annotation.Component;
 import kalzn.dxttf.pojo.outer.HeartbeatInfo;
 import kalzn.dxttf.service.ServiceManager;
 import kalzn.dxttf.service.heartbeat.HeartbeatService;
+import kalzn.dxttf.util.LogRecord;
 import kalzn.dxttf.util.factory.ResponseFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +19,7 @@ import java.util.Map;
 public class HeartbeatRouter {
 
     private final HeartbeatService heartbeatService;
+    private final Logger logger = LoggerFactory.getLogger(HeartbeatRouter.class);
 
     public HeartbeatRouter() {
         heartbeatService = ServiceManager.getService("heartbeat_service", HeartbeatService.class);
@@ -61,5 +65,19 @@ public class HeartbeatRouter {
         } catch (Exception e) {
             ctx.result(new Gson().toJson(ResponseFactory.create(500, e.getMessage())));
         }
+    }
+
+    @Api (types = "get", mapping = "/private/super/kill")
+    public void kill(Context ctx) {
+        try {
+            assert ctx.queryParam("pid") != null;
+            logger.info(LogRecord.INFO_SUPER_PRIVILEGE_EXECUTE_ATTEMPT("/private/super/kill", ctx.ip(), "Kill "+ctx.queryParam("pid")));
+            String result = heartbeatService.kill(Integer.parseInt(ctx.queryParam("pid")));
+
+        } catch (Exception e) {
+            // kill script execution results are not echoed.
+            ctx.result(new Gson().toJson(ResponseFactory.create()));
+        }
+        ctx.result(new Gson().toJson(ResponseFactory.create()));
     }
 }

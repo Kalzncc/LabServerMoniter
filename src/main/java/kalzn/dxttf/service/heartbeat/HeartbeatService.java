@@ -3,6 +3,7 @@ package kalzn.dxttf.service.heartbeat;
 
 import kalzn.dxttf.config.annotation.Component;
 import kalzn.dxttf.executor.*;
+import kalzn.dxttf.executor.sp.KillExecutor;
 import kalzn.dxttf.pojo.outer.HeartbeatInfo;
 import kalzn.dxttf.util.LogRecord;
 import org.slf4j.Logger;
@@ -50,13 +51,14 @@ public class HeartbeatService {
         try {
             assert cudaExecutor != null;
             cudaExecutor.execute(true);
+            info.setCudaInfo(cudaExecutor.getCudaInfo());
         } catch (Exception e) {
             logger.warn(String.format(LogRecord.WARN_SCRIPT_EXECUTE_FAIL, cudaExecutor.getCmd()));
             HeartbeatInfo.CudaInfo cudaInfo = new HeartbeatInfo.CudaInfo();
             cudaInfo.setCudaCount(-1);
             info.setCudaInfo(cudaInfo);
         }
-        info.setCudaInfo(cudaExecutor.getCudaInfo());
+
     }
     public HeartbeatInfo getHeartbeatInfo() {
         var info = new HeartbeatInfo();
@@ -91,5 +93,19 @@ public class HeartbeatService {
             return null;
         }
         return systemInfoExecutor.postProcess();
+    }
+
+    public String kill(int pid) {
+        var killExecutor = ExecutorManager.getExecutor("kill_executor", KillExecutor.class, true);
+        String result = "";
+        try {
+            assert killExecutor != null;
+            killExecutor.execute(true, String.valueOf(pid));
+            result =killExecutor.postProcess();
+            logger.info(LogRecord.INFO_SUPER_PRIVILEGE_EXECUTE_RESULT(killExecutor.getCmd(), result));
+        } catch (Exception e) {
+            logger.warn(String.format(LogRecord.WARN_SCRIPT_EXECUTE_FAIL, killExecutor.getCmd()));
+        }
+        return result;
     }
 }

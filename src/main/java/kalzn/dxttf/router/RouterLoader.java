@@ -16,6 +16,44 @@ import java.lang.reflect.Method;
 import java.util.*;
 import java.util.function.Consumer;
 
+/**
+ * @kalzncc
+ * <<Api Router Note>>
+ * 1. Mount all router that do not require authentication to:    /public/*
+ *
+ * 2. Mount all router that require authentication to:           /private/*
+ *    Before accessing the /private/* route, each session should first access /public/auth for authentication.
+ *    The /private/* route has an authentication filter with a priority of -5, which filters out all unauthorized sessions.
+ *
+ * 3. Mount all websocket router that do not require authentication to: /publicWs/*
+ *
+ * 4. Mount all websocket router that require authentication to: /privateWs/*
+ *    Every request attempting to connect to a route prefixed with /privateWs/* must undergo an authentication handshake process first.
+ *    The /privateWs/* route has an authentication filter with a priority of -5, which filters out all unauthorized sessions.
+ *    <<Private Websocket Connection Authentication>>
+ *    In close authentication mode:
+ *    1. Client: Open websocket connection.
+ *    2. Server: Send json message: {status: 210, msg: "Ready to authenticate."}
+ *    3. Client: Send json message: {authName: "", authToken: ""}
+ *    If Authentication Success Then:
+ *        4.1 Server: Send json message: {status: 211, msg: "Authentication success."}
+ *        4.2 Private websocket connection authentication success, start to private interactive.
+ *    Else Then:
+ *        5.1 Server: Send json message: {status: 401, msg: "Unauthorized"}
+ *        5.2 Server: Close websocket connection.
+ *    In open authentication mode:
+ *    1. Client: Open websocket connection.
+ *    2. Server: Send json message: {status: 211, msg: "Authentication success."}
+ *    3. Private websocket connection authentication success, start to private interactive.
+ *
+ * 5. Mount all router that need to run script with superuser privilege to: /privateWs/super/*
+ *    The /private/super/* route has an authentication filter with a priority of -3, which filters out all unauthorized sessions.
+ *    All requests that require privileged execution of scripts need to access /private/superAuthAgain for secondary authentication.
+ *    Secondary authentication requires matching both the token and the password. Sessions that have already undergone secondary
+ *    authentication do not need to be authenticated again.
+ *
+ * 6. In the open authentication mode, all authentication filters are disabled, allowing all requests to pass through without filtering.
+ */
 public class RouterLoader {
 
 

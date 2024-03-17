@@ -6,8 +6,9 @@ import kalzn.dxttf.data.DataManager;
 import kalzn.dxttf.data.authfile.AuthenticationDatabase;
 import kalzn.dxttf.pojo.inner.AuthenticationInfo;
 import kalzn.dxttf.pojo.inner.AuthenticationTask;
+import kalzn.dxttf.pojo.inner.AuthenticationToken;
 import kalzn.dxttf.pojo.outer.AuthenticationResult;
-import kalzn.dxttf.util.HashUtil;
+import kalzn.dxttf.util.TokenUtil;
 import kalzn.dxttf.util.LogRecord;
 import kalzn.dxttf.util.checker.AuthenticationTaskChecker;
 import kalzn.dxttf.util.factory.AuthenticationResultFactory;
@@ -33,7 +34,7 @@ public class AuthenticationService {
         }
 
         // Try times too many in short time.
-        if (loginReq.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_PWD
+        if (loginReq.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_TK
                 && info.getTryCount() > GlobalConfig.auth.pauseFailCount
                 && System.currentTimeMillis() - info.getLastTryAuthenticationTime() < GlobalConfig.auth.pauseInterval) {
             return AuthenticationResult.FAIL_TOO_MANY_TRY;
@@ -46,21 +47,43 @@ public class AuthenticationService {
         }
 
 
-        // Token authenticate from unknown ip
-        if (loginReq.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_TK
-                && (!loginReq.getIp().equals(info.getIp()) && GlobalConfig.auth.strictIp)) {
-            return AuthenticationResult.FAIL_INVALID_IP;
+        return AuthenticationResult.PASS_COMMON_AUTH_CONTINUE;
+    }
+    private AuthenticationResult pwdAuthenticate(AuthenticationTask authenticationTask, AuthenticationInfo info) {
+        AuthenticationResult result = null;
+        if (info.getPassword().equals(authenticationTask.getPassword())) {
+            result = AuthenticationResultFactory.createSuccess(authenticationTask);
+        } else {
+            result = AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_WRONG_PASSWORD_OR_TOKEN);
+        }
+       return result;
+    }
+    private AuthenticationResult tokenAuthenticate(AuthenticationTask authenticationTask, AuthenticationInfo info) {
+        String reqToken = authenticationTask.getToken();
+        String reqIp = authenticationTask.getIp();
+
+        // No token.
+        if (info.getTokens() == null || info.getTokens().isEmpty()) {
+            return AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_WRONG_PASSWORD_OR_TOKEN);
+        }
+
+        // No matched token.
+        if (!info.getTokens().containsKey(reqToken)) {
+            return AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_WRONG_PASSWORD_OR_TOKEN);
         }
 
         // Token expired.
-        if (loginReq.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_TK
-                && System.currentTimeMillis() - info.getTokenTimestamp() > GlobalConfig.auth.tokenActive) {
-            return AuthenticationResult.FAIL_TOKEN_EXPIRE;
+        if (System.currentTimeMillis() - info.getTokens().get(reqToken).getTimestamp() > GlobalConfig.auth.tokenActive) {
+            return AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_TOKEN_EXPIRE);
         }
 
-        return AuthenticationResult.CONTINUE_PASS_COMMON_AUTH;
-    }
+        // Token Ip mismatch.
+        if (GlobalConfig.auth.strictIp && !info.getTokens().get(reqToken).getIp().equals(reqIp)) {
+            return AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_INVALID_IP);
+        }
 
+        return AuthenticationResultFactory.createSuccess(authenticationTask);
+    }
     private boolean record(AuthenticationTask authenticationTask, AuthenticationResult result, AuthenticationInfo info) {
         logger.info(String.format(LogRecord.INFO_LOGIN_TRY,
                 authenticationTask.getName(),
@@ -71,14 +94,21 @@ public class AuthenticationService {
         switch (result.getResult()) {
             case AuthenticationResult.SUCCESS -> {
                 long currentTimestamp = System.currentTimeMillis();
-                info.setIp(authenticationTask.getIp());
+
+
                 if (authenticationTask.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_PWD) {
-                    info.setToken(HashUtil.generateRandomToken(GlobalConfig.auth.tokenLength));
-                    result.setToken(info.getToken());
+                    String tokenStr = TokenUtil.generateRandomToken(GlobalConfig.auth.tokenLength);
+                    AuthenticationToken token = new AuthenticationToken(tokenStr, authenticationTask.getIp(), currentTimestamp);
+
+
+                    result.setToken(token.getToken());
                     info.setLastAuthenticationTime(currentTimestamp);
                     info.setLastTryAuthenticationTime(currentTimestamp);
                     info.setTryCount(0);
-                    info.setTokenTimestamp(currentTimestamp);
+                    authDatabase.updateAuthInfo(info);
+                    return authDatabase.addToken(info.getName(), token);
+
+
                 } else if (authenticationTask.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_TK) {
                     info.setLastAuthenticationTime(currentTimestamp);
                     info.setLastTryAuthenticationTime(currentTimestamp);
@@ -92,7 +122,7 @@ public class AuthenticationService {
             default -> {
                 info.setTryCount(info.getTryCount() + 1);
                 boolean newBanFlag = false;
-                if (info.getTryCount() > GlobalConfig.auth.blockFailCount) {
+                if (GlobalConfig.auth.blockFailCount != -1 && info.getTryCount() > GlobalConfig.auth.blockFailCount) {
                     if (!authDatabase.banUser(info.getName())) {
                         return false;
                     }
@@ -139,7 +169,7 @@ public class AuthenticationService {
 
 
         int resultCode = commonAuthenticate(authenticationTask, info);
-        if (resultCode != AuthenticationResult.CONTINUE_PASS_COMMON_AUTH) {
+        if (resultCode != AuthenticationResult.PASS_COMMON_AUTH_CONTINUE) {
             AuthenticationResult result = AuthenticationResultFactory.createFail(resultCode);
             return reportAuth(authenticationTask, result, info);
 
@@ -147,32 +177,34 @@ public class AuthenticationService {
 
 
         if (authenticationTask.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_PWD) {
-            AuthenticationResult result = null;
-            if (info.getPassword().equals(authenticationTask.getPassword())) {
-                result = AuthenticationResultFactory.createSuccess(authenticationTask);
-            } else {
-                result = AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_WRONG_PASSWORD_OR_TOKEN);
-            }
+            var result = pwdAuthenticate(authenticationTask, info);
             return reportAuth(authenticationTask, result, info);
         }
 
 
         if (authenticationTask.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_TK) {
-            AuthenticationResult result = null;
-            if (info.getToken().equals(authenticationTask.getToken())) {
-                result = AuthenticationResultFactory.createSuccess(authenticationTask);
-            } else {
-                result = AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_WRONG_PASSWORD_OR_TOKEN);
-            }
+            var result = tokenAuthenticate(authenticationTask, info);
             return reportAuth(authenticationTask, result, info);
+        }
+
+        if (authenticationTask.getAuthenticationType() == AuthenticationTask.AUTHENTICATE_BY_TK_AND_PWD) {
+            var pwdResult = pwdAuthenticate(authenticationTask, info);
+            var tokenResult = tokenAuthenticate(authenticationTask, info);
+            if (pwdResult.getResult() != AuthenticationResult.SUCCESS) {
+                return reportAuth(authenticationTask, pwdResult, info);
+            }
+            return reportAuth(authenticationTask, tokenResult, info);
         }
 
         return reportAuth(
                 authenticationTask,
-                AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_SYSTEM_ERROR),
+                AuthenticationResultFactory.createFail(AuthenticationResult.FAIL_WRONG_PASSWORD_OR_TOKEN),
                 info
             );
     }
 
+    public boolean unAuthenticate(String name, String token) {
+        return authDatabase.removeToken(name, token);
+    }
 
 }

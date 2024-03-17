@@ -11,7 +11,7 @@ import lombok.ToString;
 public class AuthenticationTask {
     public static final int AUTHENTICATE_BY_PWD = 0;
     public static final int AUTHENTICATE_BY_TK  = 1;
-
+    public static final int AUTHENTICATE_BY_TK_AND_PWD  = 2;
 
     @NonNull private String name;
     private int authenticationType;

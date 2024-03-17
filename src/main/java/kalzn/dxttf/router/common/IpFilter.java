@@ -23,11 +23,11 @@ public class IpFilter {
         IpAddress ip = IpAddress.createIpFromString(ipStr);
 
         if (ip == null) {
-            return GlobalConfig.server.whiteIps.contains(ipStr);
+            return GlobalConfig.server.frontIps.contains(ipStr);
 
         }
         try {
-            for (var whiteIpString : GlobalConfig.server.whiteIps) {
+            for (var whiteIpString : GlobalConfig.server.frontIps) {
                 if (IpAddress.isIp(whiteIpString) && whiteIpString.equals(ipStr)) {
                     return true;
                 } else if (IpAddress.isIpAndMask(whiteIpString) ) {

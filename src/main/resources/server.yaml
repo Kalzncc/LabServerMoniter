@@ -1,8 +1,9 @@
 server:
 
   randomSeed: -1
-  port: 8081
-  whiteIps:
+  port: 8082
+
+  frontIps:
     - 127.0.0.1
     - localhost
     - 0:0:0:0:0:0:0:1
@@ -20,15 +21,18 @@ server:
     - ws
   ws:
     maxKeepActive: 100
-
+  encoding: utf-8
 
 front:
   loginLocation: /login
   registerLocation: /register
 
 
+psession:
+  showLine: 50
+
 auth:
-  openAuth: true
+  openAuth: false
   namePatten: "[a-zA-Z0-9]{2,16}"
   passwdPatten: "[a-zA-Z0-9.()!@#$%^&*,.<>/?;:=_+]{1,18}"
 
@@ -47,6 +51,7 @@ auth:
   strictIp: false
 
   tokenKey: auth_token
+  maxTokenCount: 30
   nameKey: user
   tokenLength: 64
 
@@ -60,7 +65,8 @@ script:
   python: python
   bash: /bin/bash
   bat: ''
-  superUserEnable: false
+  superUserEnable: true
+  superUserAuthAgain: true
   executorUser: kalzn
   register:
     - executor: "psaux_executor"
@@ -87,3 +93,24 @@ script:
       target: "systeminfo.sh"
       type: "bash"
       superUser: false
+
+    - executor: "kill_executor"
+      target: "sudo/kill.sh"
+      type: "bash"
+      superUser: true
+
+    - executor: "psession_stdout_executor"
+      target: "sudo/psession_stdout.sh"
+      type: "bash"
+      superUser: true
+
+    - executor: "psession_fdout_executor"
+      target: "sudo/psession_fdout.sh"
+      type: "bash"
+      superUser: true
+
+    - executor: "psession_fderr_executor"
+      target: "sudo/psession_fderr.sh"
+      type: "bash"
+      superUser: true
+

@@ -9,20 +9,25 @@ public class GlobalConfig {
         public static int port;
         public static int randomSeed;
 
+        public static String encoding;
         public static String staticPath;
         public static String staticMap;
         public static String externalStaticPath;
         public static String externalStaticMap;
 
         public static List<String> allowMethods;
-        public static List<String> whiteIps;
+
+        public static List<String> frontIps;
+
         public static long heartbeatInterval;
 
         public static class ws {
             public static int maxKeepActive;
         }
     }
-
+    public static class  psession {
+        public static int showLine;
+    }
     public static class auth {
         public static boolean openAuth;
         public static boolean register;
@@ -34,6 +39,7 @@ public class GlobalConfig {
         public static int pauseFailCount;
 
         public static long pauseInterval;
+        public static int maxTokenCount;
 
         public static int blockFailCount;
 
@@ -62,6 +68,7 @@ public class GlobalConfig {
     public static class script {
         public static String scriptPath;
         public static boolean superUserEnable;
+        public static boolean superUserAuthAgain;
         public static String executorUser;
         public static String python;
         public static String bash;
