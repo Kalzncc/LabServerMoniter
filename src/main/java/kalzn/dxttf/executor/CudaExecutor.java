@@ -117,6 +117,7 @@ public class CudaExecutor extends Executor{
 
 
     public HeartbeatInfo.CudaInfo getCudaInfo() {
+
         var info = new HeartbeatInfo.CudaInfo();
         String out = postProcess();
 

@@ -24,6 +24,7 @@ public abstract class Executor {
 
     @Getter protected String cmd;
     @Getter protected String[] args;
+    @Getter protected Process ps;
     protected InputStream stdout;
     protected InputStream stderr;
 
@@ -58,7 +59,7 @@ public abstract class Executor {
         return GlobalSystemStatus.superUserProcess && GlobalConfig.script.superUserEnable;
     }
     private String switchExecutorUserInLinux(String cmd) {
-        return "sudo -u " + GlobalConfig.script.executorUser + " -c " + cmd;
+        return "sudo -u " + GlobalConfig.script.executorUser + " " + cmd;
     }
 
     public final void execute(boolean block, String ...args) throws IOException, RuntimeException {
@@ -74,25 +75,23 @@ public abstract class Executor {
             throw new RuntimeException("Executor permission denied.");
         }
         this.cmd = cmd;
+
+        Process ps = Runtime.getRuntime().exec(cmd);
+        this.ps = ps;
+        this.stdout = ps.getInputStream();
+        this.stderr = ps.getErrorStream();
+
         if (block) {
-            Process ps = Runtime.getRuntime().exec(cmd);
-            this.stdout = ps.getInputStream();
-            this.stderr = ps.getErrorStream();
+            try {
+                ps.waitFor();
+            } catch (Exception ignored) {}
         } else {
-            String finalCmd = cmd;
+            if (callback == null) return;
             new Thread(() -> {
-                Exception err = null;
-                Process ps = null;
                 try {
-                    ps = Runtime.getRuntime().exec(finalCmd);
-                    this.stdout = ps.getInputStream();
-                    this.stderr = ps.getErrorStream();
-                }catch (Exception e) {
-                    err = e;
-                }
-                if (callback != null && ps != null) {
-                    callback.callback(ps.getInputStream(), ps.getErrorStream(), err);
-                }
+                    this.ps.waitFor();
+                } catch (Exception ignored) {}
+                callback.callback(this.ps.getInputStream(), this.ps.getErrorStream());
             }).start();
         }
     }

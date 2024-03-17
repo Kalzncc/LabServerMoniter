@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class AuthenticationResult {
 
-    public final static int CONTINUE_PASS_COMMON_AUTH = -1;
+    public final static int PASS_COMMON_AUTH_CONTINUE = -1;
     public final static int SUCCESS = 0;
     public final static int FAIL_USER_NOT_EXIST = 1;
     public final static int FAIL_WRONG_PASSWORD_OR_TOKEN = 2;

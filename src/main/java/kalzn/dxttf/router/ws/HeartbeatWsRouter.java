@@ -18,6 +18,7 @@ import java.util.HashMap;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -26,7 +27,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Component(type = Component.ROUTER)
 public class HeartbeatWsRouter {
 
-    private final static Map<String, WsMessageContext> sessionPool = new HashMap<>();
+    private final static Map<String, WsMessageContext> sessionPool = new ConcurrentHashMap<>();
     private final static Lock poolLock = new ReentrantLock();
     private final static Condition heartbeatListenerExist = poolLock.newCondition();
 

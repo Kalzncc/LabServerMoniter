@@ -86,4 +86,25 @@ public class TestJavaLin {
         psAux.getProcessList();
     }
 
+
+    @Test
+    void testWsFilter() throws Exception {
+        var app = Javalin.create();
+        app.wsBefore("/private/*", wsConfig -> {
+           wsConfig.onConnect(ctx -> {
+               System.out.println("private1");
+           });
+        });
+        app.wsBefore("/private/ws/*", wsConfig -> {
+            wsConfig.onConnect(ctx -> {
+                System.out.println("private2");
+            });
+        });
+        app.start(8084);
+    }
+
+    @Test
+    void testInt() throws Exception {
+        System.out.println(Integer.parseInt("3f", 16));
+    }
 }

@@ -11,9 +11,10 @@ import java.io.InputStreamReader;
 
 
 public class GlobalSystemStatus {
+    private static final Logger logger = LoggerFactory.getLogger(GlobalSystemStatus.class);
+
 
     public static String os;
-    private static final Logger logger = LoggerFactory.getLogger(GlobalSystemStatus.class);
     static {
         os = System.getProperty("os.name");
     }

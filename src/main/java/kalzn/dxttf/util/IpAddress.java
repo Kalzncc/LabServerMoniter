@@ -2,6 +2,8 @@ package kalzn.dxttf.util;
 
 import lombok.Getter;
 
+
+
 @Getter
 public class IpAddress {
     int[] seg = new int[8];
